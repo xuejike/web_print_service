@@ -6,3 +6,13 @@ c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Deb
 c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.csproj.GenerateResource.Cache
 c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.exe
 c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.pdb
+E:\project\web_print_service\printWin\obj\Debug\printWin.csprojResolveAssemblyReference.cache
+E:\project\web_print_service\printWin\obj\Debug\printWin.Form1.resources
+E:\project\web_print_service\printWin\obj\Debug\printWin.Properties.Resources.resources
+E:\project\web_print_service\printWin\obj\Debug\printWin.csproj.GenerateResource.Cache
+E:\project\web_print_service\printWin\obj\Debug\printWin.exe
+E:\project\web_print_service\printWin\obj\Debug\printWin.pdb
+E:\project\web_print_service\printWin\bin\Debug\printWin.exe
+E:\project\web_print_service\printWin\bin\Debug\printWin.pdb
+E:\project\web_print_service\printWin\bin\Debug\Newtonsoft.Json.dll
+E:\project\web_print_service\printWin\bin\Debug\Newtonsoft.Json.xml
