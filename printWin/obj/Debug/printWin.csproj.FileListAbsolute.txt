@@ -1,0 +1,8 @@
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\bin\Debug\printWin.exe
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\bin\Debug\printWin.pdb
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.csprojResolveAssemblyReference.cache
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.Form1.resources
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.Properties.Resources.resources
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.csproj.GenerateResource.Cache
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.exe
+c:\users\xuejike\documents\visual studio 2017\Projects\printWin\printWin\obj\Debug\printWin.pdb
