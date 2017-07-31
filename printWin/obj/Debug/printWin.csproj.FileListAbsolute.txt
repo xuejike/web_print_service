@@ -14,5 +14,3 @@ E:\project\web_print_service\printWin\obj\Debug\printWin.exe
 E:\project\web_print_service\printWin\obj\Debug\printWin.pdb
 E:\project\web_print_service\printWin\bin\Debug\printWin.exe
 E:\project\web_print_service\printWin\bin\Debug\printWin.pdb
-E:\project\web_print_service\printWin\bin\Debug\Newtonsoft.Json.dll
-E:\project\web_print_service\printWin\bin\Debug\Newtonsoft.Json.xml

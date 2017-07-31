@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
+
 
 namespace printWin
 {
@@ -22,8 +22,9 @@ namespace printWin
                         PageData pageData = new PageData();
                         pageData.PaperWidth = Convert.ToSingle(paperWidth);
                         pageData.PaperHeight = Convert.ToSingle(paperHeight);
-                        var deserializeObject = (List<String>)JsonConvert.DeserializeObject(postBody, typeof(List<String>));
-                        pageData.Page = deserializeObject;
+                        string[] split = postBody.Split(new char[]{ '#' },StringSplitOptions.RemoveEmptyEntries);
+//                        var deserializeObject = (List<String>)JsonConvert.DeserializeObject(postBody, typeof(List<String>));
+                        pageData.Page = new List<string>(split);
                         PagePrintService printService = new PagePrintService(pageData);
                         printService.print();
                         return "success";

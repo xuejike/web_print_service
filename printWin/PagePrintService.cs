@@ -15,6 +15,7 @@ namespace printWin
 
         private PageData PrintData;
 
+
         public PagePrintService(PageData printData)
         {
             PrintData = printData;
@@ -50,8 +51,14 @@ namespace printWin
         private void DocPrinter_PrintPage(object sender, PrintPageEventArgs e)
         {
             string pageImage = PrintData.Page[PageNo];
-//            throw new NotImplementedException();
-            e.Graphics.DrawImage(CommonTool.getImageByString(pageImage),new Point(0,0));
+            //            throw new NotImplementedException();
+//            float dpiX = e.Graphics.DpiX;
+            Image image = CommonTool.getImageByString(pageImage);
+//            Rectangle srcImg = new Rectangle(0, 0, image.Width, image.Height);
+//            var f = dpiX / image.Width *image.Height;
+//            Rectangle desRec = new Rectangle(0, 0, Convert.ToInt32(dpiX), Convert.ToInt32(f));
+
+            e.Graphics.DrawImage(image,new Point(0,0));
             PageNo++;
             if (PageNo < PrintData.Page.Count)
             {

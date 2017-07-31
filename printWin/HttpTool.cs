@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
-using Newtonsoft.Json;
+
 
 namespace printWin
 {
@@ -35,8 +35,8 @@ namespace printWin
                     httpListenerContext.Response.Headers.Add("Content-Type", "text/json; charset=utf-8");
                     using (StreamWriter writer = new StreamWriter(httpListenerContext.Response.OutputStream))
                     {
-                        string json = JsonConvert.SerializeObject(result);
-                        writer.WriteLine(json);
+//                        string json = JsonConvert.SerializeObject(result);
+                        writer.WriteLine(result);
                     }
                 }
             })).Start();
