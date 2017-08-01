@@ -16,7 +16,7 @@ js插件文件存在demo中
     jkPrint({
         width:150,//纸张宽度
         height:60,//纸张高度
-        page:".printPage", //自动获取class 为printPage的Html元素进行打印，多个printPage 会自动进行分页
+        page:".print-page", //自动获取class 为printPage的Html元素进行打印，多个printPage 会自动进行分页
         success:function(){
             //打印成功的回调
         },

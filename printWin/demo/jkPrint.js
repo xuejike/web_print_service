@@ -14,7 +14,7 @@
         });
 }
 var printDefaultOpt= {
-    width: 0, height: 0, page: ".printPage",
+    width: 0, height: 0, page: ".print-page",
     success: function() {
         
     },
@@ -24,7 +24,7 @@ var printDefaultOpt= {
 }
 function jkPrint(opt) {
     var printDefaultOpt = {
-        width: 0, height: 0, page: ".printPage",
+        width: 0, height: 0, page: ".print-page",
         success: function () {
 
         },
