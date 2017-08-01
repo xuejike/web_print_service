@@ -1,5 +1,5 @@
 ﻿function jkPrintSend(paperWidth, paperHeight, pages,successFun,errorFun) {
-    var query = "http://127.0.0.1:9999/";
+    var query = "http://127.0.0.1:19999/";
     if (paperWidth >0 && paperHeight>0) {
         query = query + "?paperWidth=" + paperWidth + "&paperHeight=" + paperHeight;
     }
@@ -46,5 +46,23 @@ function jkPrint(opt) {
     } else {
         console.error("打印页面不存在");
         return false;
+    }
+}
+function convertImage(opt, pageDiv, pageNo, pageData) {
+    let _this = this;
+    if (pageNo < pageDiv.length) {
+        html2canvas(pageDiv[pageNo], { background: "#fff" }).then(function (canvas) {
+            pageData[pageNo] = canvas.toDataURL("image/jpeg", 1.0);
+            pageNo++;
+            _this.convertImage(opt, pageDiv, pageNo, pageData);
+        });
+    } else {
+        _this.jkPrintSend(opt.width, opt.height, pageData,
+            function () {
+                opt.success();
+            },
+            function (msg) {
+                opt.error(msg);
+            });
     }
 }
