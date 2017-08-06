@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,8 @@ namespace printWin
 
             DocPrinter.PrintPage += DocPrinter_PrintPage;
 
-
+            DocPrinter.OriginAtMargins = true;
+//            DocPrinter.DefaultPageSettings.Margins.Top = 100;
         }
 
         public void print()
@@ -54,11 +56,17 @@ namespace printWin
             //            throw new NotImplementedException();
 //            float dpiX = e.Graphics.DpiX;
             Image image = CommonTool.getImageByString(pageImage);
-//            Rectangle srcImg = new Rectangle(0, 0, image.Width, image.Height);
-//            var f = dpiX / image.Width *image.Height;
-//            Rectangle desRec = new Rectangle(0, 0, Convert.ToInt32(dpiX), Convert.ToInt32(f));
-
-            e.Graphics.DrawImage(image,new Point(0,0));
+//            image = CommonTool.ResizeUsingGDIPlus((Bitmap)image, image.Width * 10, image.Height);
+            image = CommonTool.Smooth((Bitmap) image);
+            Rectangle srcImg = new Rectangle(0, 0, image.Width, image.Height);
+//                        var f = dpiX / image.Width *image.Height;
+                        Rectangle desRec = new Rectangle(0, 0, image.Width*2, image.Height*2);
+//            image = CommonTool.DealImage(image);
+           
+            e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+//            e.Graphics.DrawImage(image,new Point(0,0));
+//            e.Graphics.PageUnit=GraphicsUnit.;
+            e.Graphics.DrawImage(image,desRec, srcImg, GraphicsUnit.Pixel);
             PageNo++;
             if (PageNo < PrintData.Page.Count)
             {

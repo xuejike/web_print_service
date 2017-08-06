@@ -12,13 +12,14 @@ namespace printWin
 {
     class HttpTool
     {
-        public static void Listen(string hostPort, HttpCallBack iHttpCallback)
+        public static HttpListener Listen(string hostPort, HttpCallBack iHttpCallback)
         {
             HttpListener httpListener = new HttpListener();
 
             httpListener.AuthenticationSchemes = AuthenticationSchemes.Anonymous;
             httpListener.Prefixes.Add(hostPort);
             httpListener.Start();
+            
             new Thread(new ThreadStart(delegate
             {
                 while (true)
@@ -40,6 +41,7 @@ namespace printWin
                     }
                 }
             })).Start();
+            return httpListener;
         }
     }
 

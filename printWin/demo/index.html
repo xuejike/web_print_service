@@ -9,33 +9,52 @@
 <body>
 <script src="https://cdn.staticfile.org/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 <script src="http://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="JsBarcode.all.js"></script>
     <script src="jkPrint.js"></script>
 
-<div class="print-page" style="width: 500px;height: 40px;background:#ff00ff;">
-    <div style="width: 200px; height: 20px; background: aqua">
-
+<div class="print-page" style="width: 800px;height: 400px;">
+    <div style="width: 200px; height: 20px;font-size: 50px">
+        
     </div>
-</div>
-<div class="print-page" style="width: 500px;height: 40px;background:#ff00ff;">
-    <div style="width: 200px; height: 20px; background: aqua">
-
-    </div>
-</div>
-<div class="print-page" style="width: 500px;height: 40px;background:#ff00ff;">
-    <div style="width: 200px; height: 20px; background: aqua">
-
-    </div>
+    <img id="barcode" style="height: 100px;margin-left: 20px"/>
 </div>
 
 
 
 <script>
+    $("#barcode").JsBarcode("ZT1708040000631902");
+//    jkPrint({
+//        width: 150, height: 60
+//    })
 
-    jkPrint({
-        width:150,height:60
-    })
+    var w = $(".print-page").width();
+    var h = $(".print-page").height();
 
+    //要将 canvas 的宽高设置成容器宽高的 2 倍
+    var canvas = document.createElement("canvas");
+    canvas.width = w * 5;
+    canvas.height = h * 5;
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    var context = canvas.getContext("2d");
+    //然后将画布缩放，将图像放大两倍画到画布上
+    context.scale(5, 5);
 
+    
+    html2canvas($(".print-page"), {
+      canvas: canvas,
+      onrendered: function (canvas) {
+        var url = canvas.toDataURL("image/png"); //base64数据
+        var image = new Image();
+        image.src = url;
+        document.body.innerHTML = '';
+        // document.body.innerHTML = '<img src="' + url + '"/>';
+        document.body.appendChild(image);
+        document.title = '整个页面已经是图片了~~';
+        $("#shareBody img").css({"width": "100%", "height": "100%"})
+//        alert(document.body.innerHTML)
+      }
+    });
 </script>
 </body>
 </html>
